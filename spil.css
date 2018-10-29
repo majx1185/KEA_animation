@@ -1,127 +1,170 @@
+#screen {
+    position: relative;
+    width: 100vw;
+    height: 56.25vw;
+}
+
 #start {
-    display: none;
     background-image: url(start.svg);
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 80vw;
-    height: 45vw;
-    margin: auto;
+    background-size: 100vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
+    top: 0vw;
+    left: 0vw;
 }
 
 #settings {
-    display: none;
     background-image: url(settings.svg);
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 80vw;
-    height: 45vw;
-    margin: auto;
+    background-size: 100vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
+    top: 0vw;
+    left: 0vw;
 }
 
 #gameover {
-    display: none;
     background-image: url(gameover.svg);
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 80vw;
-    height: 45vw;
-    margin: auto;
+    background-size: 100vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
+    top: 0vw;
+    left: 0vw;
 }
 
 #levelcomplete {
-    display: none;
     background-image: url(levelcomplete.svg);
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 80vw;
-    height: 45vw;
-    margin: auto;
+    background-size: 100vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
+    top: 0vw;
+    left: 0vw;
 }
 
-#screen {
-    position: relative;
+.hide {
+    display: none;
 }
-
 
 #baggrund {
     background-image: url(baggrund.svg);
     background-size: cover;
-    width: 80vw;
-    height: 45vw;
+    width: 100vw;
+    height: 56.25vw;
     margin: auto;
 }
 
 #risengroed {
     background-image: url(risengroed.svg);
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 45vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
     top: 0.1vw;
-    left: 10vw;
-    z-index: 1;
+    left: 1vw;
 }
 
 #kat {
     background-image: url(kat.svg);
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 45vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
     top: 6vw;
-    left: 40vw;
+    left: 37vw;
+}
+
+.op_kat {
+    animation-name: translate_kf;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+    animation-fill-mode: both;
+    animation-delay: 1s;
 }
 
 #graa_rotte {
     background-image: url(graa_rotte.svg);
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 45vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
     top: 3vw;
-    left: 14vw;
+    left: 6vw;
+}
+
+.op_grotte {
+    animation-name: translate_kf;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+    animation-fill-mode: both;
 }
 
 #beige_rotte {
     background-image: url(beige_rotte.svg);
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 45vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
     top: 4vw;
-    left: -2vw;
+    left: -12vw;
 }
+
+.op_brotte {
+    animation-name: translate_kf;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+}
+
+@keyframes translate_kf {
+    0% {
+        transform: translateY(15vw);
+    }
+
+    50% {
+        transform: translateY(0vw);
+    }
+
+    100% {
+        transform: translateY(15vw);
+    }
+}
+
+
 
 #time {
     background-image: url(time.svg);
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 45vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
-    top: -12vw;
-    left: -9.6vw;
+    top: -15vw;
+    left: -23vw;
 }
 
 #energy {
     background-image: url(energy.svg);
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 50vw;
+    width: 100vw;
+    height: 56.25vw;
     position: absolute;
-    top: -5vw;
-    left: -16vw;
+    top: -3vw;
+    left: -29vw;
 }
 
 #points {
     background-image: url(points.svg);
     background-repeat: no-repeat;
-    width: 80vw;
-    height: 50vw;
+    width: 100vw;
+    height: 56.26vw;
     position: absolute;
-    top: -15.5vw;
+    top: -17.3vw;
     left: 46vw;
 }
