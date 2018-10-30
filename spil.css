@@ -5,7 +5,7 @@
 }
 
 #start {
-    background-image: url(start.svg);
+    background-image: url(baggrundtitel.svg);
     background-repeat: no-repeat;
     background-size: 100vw;
     width: 100vw;
@@ -13,6 +13,113 @@
     position: absolute;
     top: 0vw;
     left: 0vw;
+}
+
+#nisse {
+    background-image: url(nisse.svg);
+    background-repeat: no-repeat;
+    width: 80vw;
+    height: 45vw;
+    position: absolute;
+    top: 14vw;
+    left: -1vw;
+    z-index: 1;
+}
+
+#nissearm {
+    background-image: url(nissearm.svg);
+    background-repeat: no-repeat;
+    width: 80vw;
+    height: 45vw;
+    position: absolute;
+    top: 14vw;
+    left: -1vw;
+    z-index: 1;
+}
+
+.updown {
+    animation-name: updown_kf;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    transform-origin: 14% 55%;
+}
+
+@keyframes updown_kf {
+    0% {
+        transform: rotate(-35deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#kattitel {
+    background-image: url(kattitel.svg);
+    background-repeat: no-repeat;
+    width: 60vw;
+    height: 33.25vw;
+    position: absolute;
+    top: 29vw;
+    left: 73.5vw;
+    z-index: 1;
+}
+
+#kattitelhale {
+    background-image: url(kattitelhale.svg);
+    background-repeat: no-repeat;
+    width: 60vw;
+    height: 33.25vw;
+    position: absolute;
+    top: 29vw;
+    left: 73.5vw;
+    z-index: 1;
+}
+
+#playknap {
+    background-image: url(playknap.svg);
+    background-repeat: no-repeat;
+    width: 30vw;
+    height: 22.5vw;
+    position: absolute;
+    top: 39vw;
+    left: 42vw;
+    z-index: 1;
+}
+
+#graarottehop {
+    background-image: url(graarottehop.svg);
+    background-repeat: no-repeat;
+    width: 30vw;
+    height: 22.5vw;
+    position: absolute;
+    top: 13vw;
+    left: 44vw;
+    z-index: 1;
+}
+
+#beigerottetitel {
+    background-image: url(beigerottetitel.svg);
+    background-repeat: no-repeat;
+    width: 30vw;
+    height: 20vw;
+    position: absolute;
+    top: 8vw;
+    left: 33vw;
+    z-index: 1;
+}
+
+#graarottetitel {
+    background-image: url(graarottetitel.svg);
+    background-repeat: no-repeat;
+    width: 30vw;
+    height: 22.5vw;
+    position: absolute;
+    top: 9.5vw;
+    left: 54vw;
+    z-index: 1;
 }
 
 #settings {
@@ -52,6 +159,79 @@
     display: none;
 }
 
+.fade_out {
+    animation-name: fadeout_kf;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout_kf {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.pulse {
+    animation-name: pulse_kf;
+    animation-duration: 1.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes pulse_kf {
+    0% {
+        transform: scale(0.97);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.jump {
+    animation-name: jump_kf;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+@keyframes jump_kf {
+    0% {
+        transform: translate(0vw, 0vw);
+    }
+
+    100% {
+        transform: translate(2vw, 25vw);
+    }
+}
+
+.jumpupdown {
+    animation-name: jumpupdown_kf;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+@keyframes jumpupdown_kf {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-4vw);
+    }
+}
+
 #baggrund {
     background-image: url(baggrund.svg);
     background-size: cover;
@@ -83,7 +263,7 @@
 .op_kat {
     animation-name: translate_kf;
     animation-duration: 4s;
-    animation-iteration-count: 3;
+    animation-iteration-count: infinite;
     animation-fill-mode: both;
     animation-delay: 1s;
 }
@@ -101,7 +281,7 @@
 .op_grotte {
     animation-name: translate_kf;
     animation-duration: 4s;
-    animation-iteration-count: 3;
+    animation-iteration-count: infinite;
     animation-fill-mode: both;
 }
 
@@ -118,7 +298,7 @@
 .op_brotte {
     animation-name: translate_kf;
     animation-duration: 4s;
-    animation-iteration-count: 3;
+    animation-iteration-count: infinite;
     animation-fill-mode: both;
     animation-delay: 2s;
 }
