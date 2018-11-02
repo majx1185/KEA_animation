@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 #screen {
     position: relative;
     width: 100vw;
@@ -243,64 +247,57 @@
 #risengroed {
     background-image: url(risengroed.svg);
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 56.25vw;
+    width: 85vw;
+    height: 27vw;
     position: absolute;
-    top: 0.1vw;
-    left: 1vw;
-}
-
-#kat {
-    background-image: url(kat.svg);
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 56.25vw;
-    position: absolute;
-    top: 6vw;
-    left: 37vw;
-}
-
-.op_kat {
-    animation-name: translate_kf;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-    animation-delay: 1s;
-}
-
-#graa_rotte {
-    background-image: url(graa_rotte.svg);
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 56.25vw;
-    position: absolute;
-    top: 3vw;
+    top: 30.3vw;
     left: 6vw;
 }
 
-.op_grotte {
-    animation-name: translate_kf;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-}
-
-#beige_rotte {
+.figurbeige_rotte {
     background-image: url(beige_rotte.svg);
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 56.25vw;
+    width: 18vw;
+    height: 18vw;
     position: absolute;
-    top: 4vw;
-    left: -12vw;
 }
 
-.op_brotte {
+.figurgraa_rotte {
+    background-image: url(graa_rotte.svg);
+    background-repeat: no-repeat;
+    width: 18vw;
+    height: 18vw;
+    position: absolute;
+}
+
+.figurkat {
+    background-image: url(kat.svg);
+    background-repeat: no-repeat;
+    width: 18vw;
+    height: 18vw;
+    position: absolute;
+}
+
+#place1 {
+    top: -35vw;
+    left: 15vw;
+}
+
+#place2 {
+    top: -35vw;
+    left: 38vw;
+}
+
+#place3 {
+    top: -35vw;
+    left: 60vw;
+}
+
+#places {
     animation-name: translate_kf;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
-    animation-delay: 2s;
 }
 
 @keyframes translate_kf {
@@ -309,7 +306,7 @@
     }
 
     50% {
-        transform: translateY(0vw);
+        transform: translateY(-3vw);
     }
 
     100% {
@@ -317,34 +314,28 @@
     }
 }
 
-
-
-#time {
-    background-image: url(time.svg);
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 56.25vw;
-    position: absolute;
-    top: -15vw;
-    left: -23vw;
-}
+#time {}
 
 #energy {
-    background-image: url(energy.svg);
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 56.25vw;
     position: absolute;
-    top: -3vw;
-    left: -29vw;
+    top: 0vw;
+    left: 0vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    */
+}
+
+.star {
+    background-image: url(star.svg);
+    background-repeat: no-repeat;
+    width: 4.5vw;
+    height: 4.5vw;
 }
 
 #points {
-    background-image: url(points.svg);
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 56.26vw;
     position: absolute;
-    top: -17.3vw;
-    left: 46vw;
+    left: 83.5vw;
+    top: 7vw;
+    font-size: 2rem;
 }

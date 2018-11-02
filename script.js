@@ -41,3 +41,67 @@ function startGame() {
 
     document.querySelector("#start").classList.add("hide");
 }
+
+//En variabel med et tal
+let points = 0;
+let energy = 3;
+
+window.addEventListener("load", pageloaded);
+
+function pageloaded() {
+    console.log("Loaded");
+    document.querySelector("#points").innerHTML = +points;
+
+    document.querySelector(".figurbeige_rotte").addEventListener("click", clickfigur);
+
+    document.querySelector(".figurgraa_rotte").addEventListener("click", clickfigur);
+
+    document.querySelector(".figurkat").addEventListener("click", clickfigur);
+
+    document.querySelector("#points").innerHTML = +points;
+
+}
+
+function clickfigur() {
+    console.log("clickFigur");
+
+    if (this.classList.contains("figurbeige_rotte")) {
+        console.log("Beige");
+        points++;
+        document.querySelector("#points").innerHTML = points;
+
+    } else if (this.classList.contains("figurgraa_rotte")) {
+        console.log("Graa");
+        points++;
+        document.querySelector("#points").innerHTML = points;
+
+    } else if (this.classList.contains("figurkat")) {
+        console.log("kat");
+        document.querySelector("#star" + energy).classList.add("hide");
+        energy--;
+    }
+    this.classList.add("hide");
+    this.addEventListener("animationend", nyFigur);
+}
+
+function nyFigur() {
+    console.log("nyFigur");
+
+    this.className = "";
+    this.classList.add("place" + Math.floor((Math.random() * 3) + 1));
+    this.classList.add("figur" + Math.floor((Math.random() * 3) + 1));
+}
+
+//function graa_rotteclick() {
+//    console.log("der er klikket graa rotte");
+//    points++;
+//    console.log(points);
+//    document.querySelector("#points").innerHTML = +points;
+//}
+//
+//function katclick() {
+//    console.log("der er klikket kat");
+//    points--;
+//    console.log(points);
+//    document.querySelector("#points").innerHTML = +points;
+//}
