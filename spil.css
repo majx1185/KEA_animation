@@ -126,15 +126,31 @@
     z-index: 1;
 }
 
-#settings {
-    background-image: url(settings.svg);
+#settingsknap {
+    background-image: url(settingsknap.svg);
     background-repeat: no-repeat;
-    background-size: 100vw;
-    width: 100vw;
-    height: 56.25vw;
+    background-size: 100%;
+    width: 10vw;
+    height: 10vw;
     position: absolute;
-    top: 0vw;
-    left: 0vw;
+    top: 47vw;
+    left: -1vw;
+    z-index: 1;
+}
+
+#settings {
+    text-align: center;
+    position: absolute;
+    width: 60vw;
+    height: 45vw;
+    background-color: rgba(25, 64, 18, 0.82);
+    border: 5px solid white;
+    z-index: 1;
+
+    top: 5vw;
+    left: 20vw;
+    border-radius: 2vw;
+    color: white;
 }
 
 #gameover {
@@ -144,19 +160,63 @@
     width: 100vw;
     height: 56.25vw;
     position: absolute;
-    top: 0vw;
-    left: 0vw;
+    top: 10vw;
+    left: 1vw;
+}
+
+#gameover #spiligen {
+    background-image: url(spil_igen_knap.svg);
+    background-repeat: no-repeat;
+    background-size: 25vw;
+    width: 25vw;
+    height: 6vw;
+    position: absolute;
+    top: 24vw;
+    left: 48vw;
+}
+
+#gameover #stopspil {
+    background-image: url(stopspil_knap.svg);
+    background-repeat: no-repeat;
+    background-size: 13vw;
+    width: 13vw;
+    height: 6vw;
+    position: absolute;
+    top: 24vw;
+    left: 30vw;
 }
 
 #levelcomplete {
     background-image: url(levelcomplete.svg);
     background-repeat: no-repeat;
-    background-size: 100vw;
+    background-size: 80vw;
     width: 100vw;
-    height: 56.25vw;
+    height: 56vw;
     position: absolute;
-    top: 0vw;
-    left: 0vw;
+    top: 8vw;
+    left: 17vw;
+}
+
+#levelcomplete #spiligen {
+    background-image: url(spil_igen_knap.svg);
+    background-repeat: no-repeat;
+    background-size: 25vw;
+    width: 25vw;
+    height: 6vw;
+    position: absolute;
+    top: 27.5vw;
+    left: 31vw;
+}
+
+#levelcomplete #stopspil {
+    background-image: url(stopspil_knap.svg);
+    background-repeat: no-repeat;
+    background-size: 12vw;
+    width: 12vw;
+    height: 5vw;
+    position: absolute;
+    top: 27.7vw;
+    left: 13vw;
 }
 
 .hide {
@@ -254,7 +314,7 @@
     left: 6vw;
 }
 
-.figurbeige_rotte {
+.figur1 {
     background-image: url(beige_rotte.svg);
     background-repeat: no-repeat;
     width: 18vw;
@@ -262,7 +322,7 @@
     position: absolute;
 }
 
-.figurgraa_rotte {
+.figur2 {
     background-image: url(graa_rotte.svg);
     background-repeat: no-repeat;
     width: 18vw;
@@ -270,7 +330,7 @@
     position: absolute;
 }
 
-.figurkat {
+.figur3 {
     background-image: url(kat.svg);
     background-repeat: no-repeat;
     width: 18vw;
@@ -278,39 +338,35 @@
     position: absolute;
 }
 
-#place1 {
-    top: -35vw;
+.place1 {
+    top: 36vw;
     left: 15vw;
 }
 
-#place2 {
-    top: -35vw;
+.place2 {
+    top: 36vw;
     left: 38vw;
 }
 
-#place3 {
-    top: -35vw;
+.place3 {
+    top: 36vw;
     left: 60vw;
 }
 
-#places {
+.move {
     animation-name: translate_kf;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
     animation-fill-mode: both;
 }
 
 @keyframes translate_kf {
-    0% {
-        transform: translateY(15vw);
-    }
-
     50% {
-        transform: translateY(-3vw);
+        transform: translateY(-20vw);
     }
 
     100% {
-        transform: translateY(15vw);
+        transform: translateY(0vw);
     }
 }
 

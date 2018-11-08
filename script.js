@@ -6,6 +6,17 @@ function sidenVises() {
     //Hvad skal der ske
     showStart();
 
+
+
+    document.querySelector("#beige_rotte").addEventListener("click", clickfigur);
+
+    document.querySelector("#graa_rotte").addEventListener("click", clickfigur);
+
+    document.querySelector("#kat").addEventListener("click", clickfigur);
+
+    document.querySelector("#points").innerHTML = +points;
+
+
 }
 
 function showStart() {
@@ -18,9 +29,47 @@ function showStart() {
     document.querySelector("#graarottehop").classList.add("jump");
     document.querySelector("#graarottetitel").classList.add("jumpupdown");
     document.querySelector("#nissearm").classList.add("updown");
+
+    document.querySelector("#settingsknap").addEventListener("click", showSettings);
+    //    document.querySelector("#settings_close").addEventListener("click", showSettings);
+
+    document.querySelector("#stopspil").removeEventListener("click", showStart);
+
 }
 
+
+function addMove() {
+    document.querySelector("#beige_rotte").classList.add("move");
+    document.querySelector("#graa_rotte").classList.add("move");
+    document.querySelector("#kat").classList.add("move");
+
+    document.querySelector("#beige_rotte").classList.remove("hide");
+    document.querySelector("#graa_rotte").classList.remove("hide");
+    document.querySelector("#kat").classList.remove("hide");
+
+}
+
+
+function removeMove() {
+
+
+    document.querySelector("#beige_rotte").classList.remove('move');
+    document.querySelector("#graa_rotte").classList.remove('move');
+    document.querySelector("#kat").classList.remove('move');
+    setTimeout(addMove, 300);
+}
+
+
 function hideStart() {
+    addMove();
+
+    document.querySelector("#beige_rotte").addEventListener('animationend', removeMove);
+    document.querySelector("#graa_rotte").addEventListener('animationend', removeMove);
+    document.querySelector("#kat").addEventListener('animationend', removeMove);
+
+
+
+
     console.log("hide start");
     document.querySelector("#playknap").removeEventListener("click", hideStart);
 
@@ -40,48 +89,46 @@ function startGame() {
     document.querySelector("#start").classList.remove("fade_out");
 
     document.querySelector("#start").classList.add("hide");
+
+    document.querySelector("#spiligen").removeEventListener("click", startGame);
+
+}
+
+function showSettings() {
+    console.log("showSettings");
+    document.querySelector("#settings").classList.toggle("hide");
 }
 
 //En variabel med et tal
+let time = 30;
 let points = 0;
 let energy = 3;
 
-window.addEventListener("load", pageloaded);
-
-function pageloaded() {
-    console.log("Loaded");
-    document.querySelector("#points").innerHTML = +points;
-
-    document.querySelector(".figurbeige_rotte").addEventListener("click", clickfigur);
-
-    document.querySelector(".figurgraa_rotte").addEventListener("click", clickfigur);
-
-    document.querySelector(".figurkat").addEventListener("click", clickfigur);
-
-    document.querySelector("#points").innerHTML = +points;
-
-}
 
 function clickfigur() {
     console.log("clickFigur");
 
-    if (this.classList.contains("figurbeige_rotte")) {
+    if (this.classList.contains("figur1")) {
         console.log("Beige");
         points++;
         document.querySelector("#points").innerHTML = points;
 
-    } else if (this.classList.contains("figurgraa_rotte")) {
+    } else if (this.classList.contains("figur2")) {
         console.log("Graa");
         points++;
         document.querySelector("#points").innerHTML = points;
 
-    } else if (this.classList.contains("figurkat")) {
+    } else if (this.classList.contains("figur3")) {
         console.log("kat");
         document.querySelector("#star" + energy).classList.add("hide");
         energy--;
     }
     this.classList.add("hide");
+
     this.addEventListener("animationend", nyFigur);
+    gameStatus();
+
+    setTimeout(addMove, 300);
 }
 
 function nyFigur() {
@@ -92,16 +139,37 @@ function nyFigur() {
     this.classList.add("figur" + Math.floor((Math.random() * 3) + 1));
 }
 
-//function graa_rotteclick() {
-//    console.log("der er klikket graa rotte");
-//    points++;
-//    console.log(points);
-//    document.querySelector("#points").innerHTML = +points;
-//}
-//
-//function katclick() {
-//    console.log("der er klikket kat");
-//    points--;
-//    console.log(points);
-//    document.querySelector("#points").innerHTML = +points;
-//}
+function gameStatus() {
+    console.log("gameStatus");
+
+    if (energy == 0) {
+        document.querySelector("#gameover").classList.remove("hide");
+    } else if (points == 10) {
+        document.querySelector("#levelcomplete").classList.remove("hide");
+    }
+}
+
+function timeOver() {
+    console.log("tælller ned fra" + time);
+
+
+    if (time > 0) {
+        time--;
+        setTimeout(timeOver, 1000);
+
+    } else {
+        gameOver();
+    }
+}
+
+function gameOver() {
+    console.log("gameOver");
+    document.querySelector("#spiligen").addEventListener("click", startGame);
+    document.querySelector("#stopspil").addEventListener("click", showStart);
+
+}
+
+function levelCompleted() {
+    console.log("levelCompleted");
+
+}
