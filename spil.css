@@ -164,7 +164,7 @@
     left: 1vw;
 }
 
-#gameover #spiligen {
+#gameover #spil_igen_knap {
     background-image: url(spil_igen_knap.svg);
     background-repeat: no-repeat;
     background-size: 25vw;
@@ -175,7 +175,7 @@
     left: 48vw;
 }
 
-#gameover #stopspil {
+#gameover #stopspil_knap {
     background-image: url(stopspil_knap.svg);
     background-repeat: no-repeat;
     background-size: 13vw;
@@ -197,7 +197,7 @@
     left: 17vw;
 }
 
-#levelcomplete #spiligen {
+#levelcomplete #spil_igen_knap {
     background-image: url(spil_igen_knap.svg);
     background-repeat: no-repeat;
     background-size: 25vw;
@@ -208,7 +208,7 @@
     left: 31vw;
 }
 
-#levelcomplete #stopspil {
+#levelcomplete #stopspil_knap {
     background-image: url(stopspil_knap.svg);
     background-repeat: no-repeat;
     background-size: 12vw;
@@ -370,7 +370,12 @@
     }
 }
 
-#time {}
+#time {
+    position: absolute;
+    left: 12vw;
+    top: 2vw;
+    font-size: 2rem;
+}
 
 #energy {
     position: absolute;

@@ -33,7 +33,6 @@ function showStart() {
     document.querySelector("#settingsknap").addEventListener("click", showSettings);
     //    document.querySelector("#settings_close").addEventListener("click", showSettings);
 
-    document.querySelector("#stopspil").removeEventListener("click", showStart);
 
 }
 
@@ -81,6 +80,8 @@ function hideStart() {
     document.querySelector("#start").classList.add("fade_out");
 
     document.querySelector("#start").addEventListener("animationend", startGame);
+
+    timeOver();
 }
 
 function startGame() {
@@ -90,19 +91,21 @@ function startGame() {
 
     document.querySelector("#start").classList.add("hide");
 
-    document.querySelector("#spiligen").removeEventListener("click", startGame);
+    document.querySelector("#spil_igen_knap").removeEventListener("click", startGame);
 
 }
 
 function showSettings() {
     console.log("showSettings");
     document.querySelector("#settings").classList.toggle("hide");
+
 }
 
 //En variabel med et tal
 let time = 30;
 let points = 0;
 let energy = 3;
+
 
 
 function clickfigur() {
@@ -144,6 +147,8 @@ function gameStatus() {
 
     if (energy == 0) {
         document.querySelector("#gameover").classList.remove("hide");
+
+
     } else if (points == 10) {
         document.querySelector("#levelcomplete").classList.remove("hide");
     }
@@ -156,6 +161,7 @@ function timeOver() {
     if (time > 0) {
         time--;
         setTimeout(timeOver, 1000);
+        document.querySelector("#time").innerHTML = time;
 
     } else {
         gameOver();
@@ -164,12 +170,17 @@ function timeOver() {
 
 function gameOver() {
     console.log("gameOver");
-    document.querySelector("#spiligen").addEventListener("click", startGame);
-    document.querySelector("#stopspil").addEventListener("click", showStart);
+    document.querySelector("#gameover").classList.remove("hide");
+
+    document.querySelector("#spil_igen_knap").addEventListener("click", showStart);
+    document.querySelector("#stopspil_knap").addEventListener("click", sidenVises);
 
 }
 
 function levelCompleted() {
     console.log("levelCompleted");
+    document.querySelector("#levelcomplete").classList.remove("hide");
 
+    document.querySelector("#spil_igen_knap").addEventListener("click", showStart);
+    document.querySelector("#stopspil_knap").addEventListener("click", sidenVises);
 }
